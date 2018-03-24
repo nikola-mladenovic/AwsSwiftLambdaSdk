@@ -17,10 +17,10 @@ public enum FunctionError: String, Codable {
 }
 
 public struct InvocationResponse<T: Decodable> {
-    let payload: T?                  // Available only if invocation type is 'requestResponse'.
-    let logResult: String?
-    let functionError: FunctionError?
-    let errorDescription: String?
+    public let payload: T?                  // Available only if invocation type is 'requestResponse'.
+    public let logResult: String?
+    public let functionError: FunctionError?
+    public let errorDescription: String?
     
     init(payload: T? = nil, logResult: String? = nil, functionError: FunctionError? = nil, errorDescription: String? = nil) {
         self.payload = payload

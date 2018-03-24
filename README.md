@@ -35,7 +35,7 @@ import AwsLambda
 To use library first initialize the `AwsLambda` instance with your credentials and host. After that initialize `AwsLambdaFunction` instance:
 ``` swift
 let awsLambda = AwsLambda(host: "https://dynamodb.us-west-2.amazonaws.com", accessKeyId: "OPKASPJPOAS23IOJS", secretAccessKey: "232(I(%$jnasoijaoiwj2919109233")
-let testFunction = awsLambda.table(name: "test-function")
+let testFunction = awsLambda.function(named: "test-function")
 ```
 To invoke the function use the  `invoke` method of the `AwsLambdaFunction` instance:
 ``` swift

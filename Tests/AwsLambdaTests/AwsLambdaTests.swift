@@ -25,7 +25,7 @@ class AwsLambdaTests: XCTestCase {
     
     func testInvokeSuccess() {
         let publishExpectation = expectation(description: "InvokeExpectation")
-        lambdaClient?.function(with: "AwsLambdaTestSuccess").invoke(completion: { (response: InvocationResponse<String>) in
+        lambdaClient?.function(named: "AwsLambdaTestSuccess").invoke(completion: { (response: InvocationResponse<String>) in
             XCTAssertNil(response.errorDescription)
             XCTAssertNil(response.logResult)
             XCTAssertNil(response.functionError)
@@ -39,7 +39,7 @@ class AwsLambdaTests: XCTestCase {
     
     func testInvokeLogging() {
         let publishExpectation = expectation(description: "InvokeExpectation")
-        lambdaClient?.function(with: "AwsLambdaTestSuccess").invoke(logType: .tail, completion: { (response: InvocationResponse<String>) in
+        lambdaClient?.function(named: "AwsLambdaTestSuccess").invoke(logType: .tail, completion: { (response: InvocationResponse<String>) in
             XCTAssertNil(response.errorDescription)
             XCTAssertNotNil(response.logResult)
             XCTAssertNil(response.functionError)
@@ -54,7 +54,7 @@ class AwsLambdaTests: XCTestCase {
     func testInvokePayload() {
         let publishExpectation = expectation(description: "InvokeExpectation")
         let payload = TestPayload(name: "Mrvica", number: 666)
-        lambdaClient?.function(with: "AwsLambdaTestPayload").invoke(payload: payload, completion: { (response: InvocationResponse<TestPayload>) in
+        lambdaClient?.function(named: "AwsLambdaTestPayload").invoke(payload: payload, completion: { (response: InvocationResponse<TestPayload>) in
             XCTAssertNil(response.errorDescription)
             XCTAssertNil(response.logResult)
             XCTAssertNil(response.functionError)
@@ -68,7 +68,7 @@ class AwsLambdaTests: XCTestCase {
     
     func testInvokeFailed() {
         let publishExpectation = expectation(description: "InvokeExpectation")
-        lambdaClient?.function(with: "AwsLambdaTestFailed").invoke(completion: { (response: InvocationResponse<String>) in
+        lambdaClient?.function(named: "AwsLambdaTestFailed").invoke(completion: { (response: InvocationResponse<String>) in
             XCTAssertNotNil(response.errorDescription)
             XCTAssertNil(response.logResult)
             XCTAssert(response.functionError == .handled)

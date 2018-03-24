@@ -32,9 +32,9 @@ public class AwsLambda {
     
     /// Initializes `AwsLambdaFunction` instance for given function name.
     ///
-    /// - Parameter name: The name of the function.
+    /// - Parameter named: The name of the function.
     /// - Returns: `AwsLambdaFunction` instance.
-    public func function(with name: String) -> AwsLambdaFunction {
+    public func function(named name: String) -> AwsLambdaFunction {
         return AwsLambdaFunction(name: name, awsLambda: self)
     }
     
