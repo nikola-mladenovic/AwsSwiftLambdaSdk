@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "AwsLambdaSDK"
-  s.version      = "0.1.0"
+  s.version      = "0.2.0"
   s.summary      = "Swift library which enables you to invoke AWS Lambda programmatically"
   s.homepage     = "https://github.com/nikola-mladenovic/AwsSwiftLambdaSdk"
   s.license      = { :type => "Apache License, Version 2.0", :file => "LICENSE" }
