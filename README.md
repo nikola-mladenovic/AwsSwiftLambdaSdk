@@ -21,7 +21,7 @@ Swift library which enables you to invoke AWS Lambda programmatically. More deta
 To use AwsLambda, modify the Package.swift file and add following dependency:
 
 ``` swift
-.package(url: "https://github.com/nikola-mladenovic/AwsSwiftLambdaSdk", .branch("master"))
+.package(url: "https://github.com/nikola-mladenovic/AwsSwiftLambdaSdk", from: "0.2.0")
 ```
 
 Then import the `AwsLambda` library into the swift source code:
